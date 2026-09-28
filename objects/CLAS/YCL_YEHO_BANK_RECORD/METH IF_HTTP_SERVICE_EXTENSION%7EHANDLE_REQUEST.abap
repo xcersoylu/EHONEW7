@@ -173,6 +173,7 @@
                 READ TABLE lt_virman ASSIGNING FIELD-SYMBOL(<ls_virman>)
                                                WITH KEY glaccount = <ls_item>-glaccount
                                                         postingdate = <ls_item>-physical_operation_date
+                                                        debitcreditcode = COND #( WHEN <ls_item>-debit_credit = 'B' THEN 'S' ELSE 'H' )
                                                         absoluteamountintransaccrcy = abs( <ls_item>-amount ).
                 IF sy-subrc = 0.
                   <ls_virman>-delete = abap_true.
@@ -236,6 +237,7 @@
               READ TABLE lt_virman ASSIGNING <ls_virman>
                                              WITH KEY glaccount = <ls_item>-glaccount
                                                       postingdate = <ls_item>-physical_operation_date
+                                                      debitcreditcode = COND #( WHEN <ls_item>-debit_credit = 'B' THEN 'S' ELSE 'H' )
                                                       absoluteamountintransaccrcy = abs( <ls_item>-amount ).
               IF sy-subrc = 0.
                 <ls_virman>-delete = abap_true.
@@ -302,6 +304,7 @@
               READ TABLE lt_virman ASSIGNING <ls_virman>
                                              WITH KEY glaccount = <ls_item>-glaccount
                                                       postingdate = <ls_item>-physical_operation_date
+                                                      debitcreditcode = COND #( WHEN <ls_item>-debit_credit = 'B' THEN 'S' ELSE 'H' )
                                                       absoluteamountintransaccrcy = abs( <ls_item>-amount ).
               IF sy-subrc = 0.
                 <ls_virman>-delete = abap_true.
