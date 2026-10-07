@@ -84,7 +84,8 @@
         lv_buzei = 1.
         LOOP AT ms_request-split_items INTO DATA(ls_split_item).
           lv_buzei += 1.
-          lv_wrbtr = COND #( WHEN ls_split_item-debit_credit = 'B' THEN -1 * ls_split_item-amount
+*          lv_wrbtr = COND #( WHEN ls_split_item-debit_credit = 'B' THEN -1 * ls_split_item-amount
+          lv_wrbtr = COND #( WHEN ls_split_item-debit_credit = 'A' THEN -1 * ls_split_item-amount
                                                                    ELSE ls_split_item-amount ).
           lv_wrbtr_total += lv_wrbtr.
           IF ls_split_item-supplier IS NOT INITIAL.
