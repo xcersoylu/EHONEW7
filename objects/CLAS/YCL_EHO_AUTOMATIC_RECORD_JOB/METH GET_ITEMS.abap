@@ -110,6 +110,13 @@
         LOOP AT lt_automatic_items INTO DATA(ls_automatic_item).
           READ TABLE lt_bankpass INTO DATA(ls_bankpass) WITH KEY iban = ls_automatic_item-sender_iban.
           IF sy-subrc = 0. "virman.
+            READ TABLE mt_automatic_items INTO DATA(ls_check) WITH KEY glaccount = ls_automatic_item-glaccount
+                                                                       debit_credit = ls_automatic_item-debit_credit
+                                                                       amount = ls_automatic_item-amount
+                                                                       manualrecord = abap_true.
+            IF sy-subrc = 0.
+              CONTINUE.
+            ENDIF.
             LOOP AT mt_automatic_items ASSIGNING FIELD-SYMBOL(<ls_automatic_item>) WHERE glaccount = ls_bankpass-glaccount
                                                                                      AND debit_credit = COND #( WHEN ls_automatic_item-debit_credit = 'B' THEN 'A' ELSE 'B' )
                                                                                      AND amount = COND yeho_e_wrbtr( WHEN ls_automatic_item-amount < 0 THEN abs( ls_automatic_item-amount ) ELSE -1 * ls_automatic_item-amount ).
