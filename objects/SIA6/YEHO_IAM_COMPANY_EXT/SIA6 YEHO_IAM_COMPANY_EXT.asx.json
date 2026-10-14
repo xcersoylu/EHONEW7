@@ -23,7 +23,61 @@
     "CREATE_USER":"SAP_CUSTOMER",
     "CREATE_TIMESTAMP":"+020241113075602",
     "CHANGE_USER":"SAP_CUSTOMER",
-    "CHANGE_TIMESTAMP":"+020241113075624"
+    "CHANGE_TIMESTAMP":"+020261014165327"
+   }
+  ]
+ },
+ {
+  "table":"APS_IAM_W_APPAUI",
+  "data":
+  [
+   {
+    "APP_ID":"YEHO_IAM_COMPANY_EXT",
+    "UUID":"+hY+u89+H+Gx/fjZ/14ryQ==",
+    "AUTH_OBJECT":"F_BKPF_BUK",
+    "AUTH_OBJECT_INST_ID":1,
+    "IBS_SOURCE":"",
+    "STATUS":"U",
+    "INACTIVE":"",
+    "COPIED":"",
+    "IBS_SOURCE_TYPE":""
+   }
+  ]
+ },
+ {
+  "table":"APS_IAM_W_APPAUO",
+  "data":
+  [
+   {
+    "APP_ID":"YEHO_IAM_COMPANY_EXT",
+    "AUTH_OBJECT":"F_BKPF_BUK",
+    "STATUS":"U"
+   }
+  ]
+ },
+ {
+  "table":"APS_IAM_W_APPAUV",
+  "data":
+  [
+   {
+    "APP_ID":"YEHO_IAM_COMPANY_EXT",
+    "UUID":"+hY+u89+H+Gx/fjZ/15LyQ==",
+    "PARENT_ID":"+hY+u89+H+Gx/fjZ/14ryQ==",
+    "FIELD":"BUKRS",
+    "LOW_VALUE":"",
+    "HIGH_VALUE":"",
+    "STATUS":"U",
+    "COPIED":""
+   },
+   {
+    "APP_ID":"YEHO_IAM_COMPANY_EXT",
+    "UUID":"+hY+u89+H+Gx/fjZ/15ryQ==",
+    "PARENT_ID":"+hY+u89+H+Gx/fjZ/14ryQ==",
+    "FIELD":"ACTVT",
+    "LOW_VALUE":"03",
+    "HIGH_VALUE":"",
+    "STATUS":"U",
+    "COPIED":""
    }
   ]
  },

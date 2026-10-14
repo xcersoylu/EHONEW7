@@ -1,0 +1,60 @@
+[
+ {
+  "table":"ACMDCLSRC",
+  "data":
+  [
+   {
+    "DCLNAME":"YEHO_DDL_C_DELETE_RECEIPT_AC",
+    "AS4LOCAL":"A",
+    "AS4USER":"SAP_CUSTOMER",
+    "AS4DATE":"2026-10-14",
+    "AS4TIME":"16:28:43",
+    "SOURCE":"@EndUserText.label: 'Banka Kaydı Sil Yetkilendirme'\r\n@MappingRole: true\r\ndefine role YEHO_DDL_C_DELETE_RECEIPT_AC {\r\n    grant\r\n        select\r\n            on\r\n                YEHO_DDL_C_DELETE_RECEIPT\r\n                    where\r\n                        inheriting conditions from entity YEHO_DDL_I_DELETE_RECEIPT;\r\n                        \r\n}",
+    "PARENTNAME":"",
+    "ABAP_LANGUAGE_VERSION":"5"
+   }
+  ]
+ },
+ {
+  "table":"ACMDCLSRCT",
+  "data":
+  [
+   {
+    "DCLNAME":"YEHO_DDL_C_DELETE_RECEIPT_AC",
+    "DCLLANGUAGE":"T",
+    "AS4LOCAL":"A",
+    "DDTEXT":"Banka Kaydı Sil Yetkilendirme"
+   }
+  ]
+ },
+ {
+  "table":"TADIR",
+  "data":
+  [
+   {
+    "PGMID":"R3TR",
+    "OBJECT":"DCLS",
+    "OBJ_NAME":"YEHO_DDL_C_DELETE_RECEIPT_AC",
+    "KORRNUM":"",
+    "SRCSYSTEM":"...",
+    "AUTHOR":"SAP_CUSTOMER",
+    "SRCDEP":"",
+    "DEVCLASS":"YEHO",
+    "GENFLAG":"",
+    "EDTFLAG":"",
+    "CPROJECT":" L",
+    "MASTERLANG":"T",
+    "VERSID":"",
+    "PAKNOCHECK":"",
+    "OBJSTABLTY":"",
+    "COMPONENT":"",
+    "CRELEASE":"",
+    "DELFLAG":"",
+    "TRANSLTTXT":"",
+    "CREATED_ON":"2026-10-14",
+    "CHECK_DATE":"2026-10-14",
+    "CHECK_CFG":""
+   }
+  ]
+ }
+]

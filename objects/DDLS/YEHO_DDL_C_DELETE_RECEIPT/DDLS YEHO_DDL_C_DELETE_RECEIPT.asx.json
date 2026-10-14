@@ -9,10 +9,10 @@
     "AS4USER":"SAP_CUSTOMER",
     "AS4DATE":"0000-00-00",
     "AS4TIME":"00:00:00",
-    "SOURCE":"@AccessControl.authorizationCheck: #NOT_REQUIRED\r\n@EndUserText.label: 'Dekont Silme'\r\n@Metadata.ignorePropagatedAnnotations: true\r\n@Metadata.allowExtensions: true\r\ndefine root view entity YEHO_DDL_C_DELETE_RECEIPT \r\nprovider contract transactional_query\r\nas projection on YEHO_DDL_I_DELETE_RECEIPT\r\n{\r\n    key companycode,\r\n    key glaccount,\r\n    key physical_operation_date,\r\n    deleteable,\r\n    /* Associations */\r\n    _items : redirected to composition child YEHO_DDL_C_DELETE_RECEIPT_ITEM\r\n}\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[\n\"YEHO_DDL_I_DELETE_RECEIPT\"\n],\n\"ASSOCIATED\":\n[\n\"YEHO_DDL_C_DELETE_RECEIPT_ITEM\",\n\"YEHO_DDL_I_DELETE_RECEIPT_ITEM\"\n],\n\"BASE\":\n[\n\"YEHO_DDL_I_DELETE_RECEIPT\"\n],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
+    "SOURCE":"@AccessControl.authorizationCheck: #CHECK\r\n@EndUserText.label: 'Dekont Silme'\r\n@Metadata.ignorePropagatedAnnotations: true\r\n@Metadata.allowExtensions: true\r\ndefine root view entity YEHO_DDL_C_DELETE_RECEIPT \r\nprovider contract transactional_query\r\nas projection on YEHO_DDL_I_DELETE_RECEIPT\r\n{\r\n    key companycode,\r\n    key glaccount,\r\n    key physical_operation_date,\r\n    deleteable,\r\n    /* Associations */\r\n    _items : redirected to composition child YEHO_DDL_C_DELETE_RECEIPT_ITEM\r\n}\r\n/*+[internal] {\n\"BASEINFO\":\n{\n\"FROM\":\n[\n\"YEHO_DDL_I_DELETE_RECEIPT\"\n],\n\"ASSOCIATED\":\n[\n\"YEHO_DDL_C_DELETE_RECEIPT_ITEM\",\n\"YEHO_DDL_I_DELETE_RECEIPT_ITEM\"\n],\n\"BASE\":\n[\n\"YEHO_DDL_I_DELETE_RECEIPT\"\n],\n\"ANNO_REF\":\n[],\n\"SCALAR_FUNCTION\":\n[],\n\"VERSION\":0,\n\"ANNOREF_EVALUATION_ERROR\":\"\"\n}\n}*/",
     "PARENTNAME":"",
     "ACTFLAG":"",
-    "CHGFLAG":"76",
+    "CHGFLAG":"",
     "SOURCE_TYPE":"P",
     "SOURCE_ORIGIN":"0",
     "ABAP_LANGUAGE_VERSION":"5"
@@ -85,7 +85,7 @@
     "STRUCOBJN":"YEHO_DDL_C_DELETE_RECEIPT",
     "NAME":"ACCESSCONTROL.AUTHORIZATIONCHECK",
     "POSITION":2,
-    "VALUE":"#NOT_REQUIRED"
+    "VALUE":"#CHECK"
    },
    {
     "STRUCOBJN":"YEHO_DDL_C_DELETE_RECEIPT",
