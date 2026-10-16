@@ -23,13 +23,13 @@
                                                                      glaccount = VALUE #( content = is_item-glaccount )
                                                                      amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) )
                                                                      document_item_text = is_item-documentitemtext102
-                                                                     debit_credit_code = 'S'
+                                                                     debit_credit_code = 'H'
                                                                   ) )
                                                   debtor_item = VALUE #( ( reference_document_item = '002'
                                                                              debtor = is_item-customer
                                                                              amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) * -1 )
                                                                              document_item_text = is_item-documentitemtext
-                                                                             debit_credit_code = 'H'
+                                                                             debit_credit_code = 'S'
                                                                              altv_recncln_accts = VALUE #( content = is_item-alt_recon_account )
                                                                           ) )
                                                   )
@@ -53,13 +53,13 @@
                                                                      glaccount = VALUE #( content = is_item-glaccount )
                                                                      amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) * -1 )
                                                                      document_item_text = is_item-documentitemtext102
-                                                                     debit_credit_code = 'H'
+                                                                     debit_credit_code = 'S'
                                                                   ) )
                                                   creditor_item = VALUE #( ( reference_document_item = '002'
                                                                              creditor = is_item-supplier
                                                                              amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) )
                                                                              document_item_text = is_item-documentitemtext
-                                                                             debit_credit_code = 'S'
+                                                                             debit_credit_code = 'H'
                                                                              altv_recncln_accts = VALUE #( content = is_item-alt_recon_account )
                                                                           ) )
                                                   )
