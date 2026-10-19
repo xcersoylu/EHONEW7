@@ -21,13 +21,13 @@
                                                    posting_date                   = is_item-physical_operation_date
                                                    item = VALUE #( ( reference_document_item = '001'
                                                                      glaccount = VALUE #( content = is_item-rule_data-account_no_102 )
-                                                                     amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) )
+                                                                     amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) * -1 )
                                                                      document_item_text = is_item-rule_data-documentitemtext_1
                                                                      debit_credit_code = 'H'
                                                                   ) )
                                                   debtor_item = VALUE #( ( reference_document_item = '002'
                                                                              debtor = is_item-rule_data-customer
-                                                                             amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) * -1 )
+                                                                             amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) )
                                                                              document_item_text = is_item-rule_data-documentitemtext_2
                                                                              debit_credit_code = 'S'
                                                                              altv_recncln_accts = VALUE #( content = is_item-rule_data-alt_recon_account )
@@ -51,13 +51,13 @@
                                                    posting_date                   = is_item-physical_operation_date
                                                    item = VALUE #( ( reference_document_item = '001'
                                                                      glaccount = VALUE #( content = is_item-rule_data-account_no_102 )
-                                                                     amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) * -1 )
+                                                                     amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) )
                                                                      document_item_text = is_item-rule_data-documentitemtext_1
                                                                      debit_credit_code = 'S'
                                                                   ) )
                                                   creditor_item = VALUE #( ( reference_document_item = '002'
                                                                              creditor = is_item-rule_data-supplier
-                                                                             amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) )
+                                                                             amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) * -1 )
                                                                              document_item_text = is_item-rule_data-documentitemtext_2
                                                                              debit_credit_code = 'H'
                                                                              altv_recncln_accts = VALUE #( content = is_item-rule_data-alt_recon_account )
