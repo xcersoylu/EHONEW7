@@ -21,15 +21,15 @@
                                                    posting_date                   = is_item-physical_operation_date
                                                    item = VALUE #( ( reference_document_item = '001'
                                                                      glaccount = VALUE #( content = is_item-glaccount )
-                                                                     amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) * -1 )
+                                                                     amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = is_item-amount )
                                                                      document_item_text = is_item-documentitemtext102
-                                                                     debit_credit_code = 'H'
+                                                                     debit_credit_code = cond #( when is_item-amount < 0 then 'H' else 'S' )
                                                                   ) )
                                                   debtor_item = VALUE #( ( reference_document_item = '002'
                                                                              debtor = is_item-customer
-                                                                             amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount )  )
+                                                                             amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = is_item-amount * -1  )
                                                                              document_item_text = is_item-documentitemtext
-                                                                             debit_credit_code = 'S'
+                                                                             debit_credit_code = cond #( when is_item-amount < 0 then 'S' else 'H' )
                                                                              altv_recncln_accts = VALUE #( content = is_item-alt_recon_account )
                                                                           ) )
                                                   )
@@ -51,15 +51,15 @@
                                                    posting_date                   = is_item-physical_operation_date
                                                    item = VALUE #( ( reference_document_item = '001'
                                                                      glaccount = VALUE #( content = is_item-glaccount )
-                                                                     amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount )  )
+                                                                     amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = is_item-amount  )
                                                                      document_item_text = is_item-documentitemtext102
-                                                                     debit_credit_code = 'S'
+                                                                     debit_credit_code = cond #( when is_item-amount < 0 then 'H' else 'S' )
                                                                   ) )
                                                   creditor_item = VALUE #( ( reference_document_item = '002'
                                                                              creditor = is_item-supplier
-                                                                             amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = abs( is_item-amount ) * -1 )
+                                                                             amount_in_transaction_currency = VALUE #( currency_code = is_item-currency content = is_item-amount * -1 )
                                                                              document_item_text = is_item-documentitemtext
-                                                                             debit_credit_code = 'H'
+                                                                             debit_credit_code = cond #( when is_item-amount < 0 then 'S' else 'H' )
                                                                              altv_recncln_accts = VALUE #( content = is_item-alt_recon_account )
                                                                           ) )
                                                   )
